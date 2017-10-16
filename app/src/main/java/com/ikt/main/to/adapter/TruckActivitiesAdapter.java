@@ -43,13 +43,15 @@ public class TruckActivitiesAdapter extends RecyclerView.Adapter<TruckActivities
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         obj = data.get(position);
-        holder.txtTruckAndDriver.setText(obj.getTruck()+" | "+ obj.getDriver());
+//        holder.txtTruckAndDriver.setText(obj.getTruck()+" | "+ obj.getDriver());
 //        holder.txtTimeSlot.setText(obj.getLast_update()+"");
         holder.txtStatus.setText(obj.getLast_status());
         // Satrio
         String time = obj.getLast_update()+"";
-        holder.txtDate.setText(time.substring(0,10));
+        holder.txtDate.setText(time.substring(0,11));
         holder.txtHour.setText(time.substring(12,17));
+        holder.txtTruck.setText(obj.getTruck()+"");
+        holder.txtDriver.setText(obj.getDriver()+"");
         holder.truckActivitiesLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +68,7 @@ public class TruckActivitiesAdapter extends RecyclerView.Adapter<TruckActivities
 
     protected class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView txtTruckAndDriver;
+        //        private TextView txtTruckAndDriver;
 //        private TextView txtTimeSlot;
         private TextView txtStatus;
         private ImageView iconArrow;
@@ -74,10 +76,12 @@ public class TruckActivitiesAdapter extends RecyclerView.Adapter<TruckActivities
         // Satrio
         private TextView txtDate;
         private TextView txtHour;
+        private TextView txtDriver;
+        private TextView txtTruck;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            txtTruckAndDriver = (TextView) itemView.findViewById(R.id.txtTruckAndDriver);
+//            txtTruckAndDriver = (TextView) itemView.findViewById(R.id.txtTruckAndDriver);
 //            txtTimeSlot = (TextView) itemView.findViewById(R.id.txtTimeSlot);
             txtStatus = (TextView) itemView.findViewById(R.id.txtStatus);
             iconArrow = (ImageView) itemView.findViewById(R.id.imgArrow);
@@ -85,6 +89,8 @@ public class TruckActivitiesAdapter extends RecyclerView.Adapter<TruckActivities
             // Satrio
             txtDate = (TextView) itemView.findViewById(R.id.txtDate);
             txtHour = (TextView) itemView.findViewById(R.id.txtHour);
+            txtTruck = (TextView) itemView.findViewById(R.id.txtTruck);
+            txtDriver = (TextView) itemView.findViewById(R.id.txtDriver);
         }
     }
 

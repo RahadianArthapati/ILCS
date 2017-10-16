@@ -25,79 +25,116 @@
             android:orientation="horizontal">
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentLeft="true">
-
-            <TextView
-                android:id="@+id/txtTruckAndDriver"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="B 9100 TAM | Donny"
-                android:textSize="@dimen/_12ssp"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:textAllCaps="true"/>
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_alignParentLeft="true"
-                android:paddingTop="@dimen/_3sdp">
+                android:orientation="vertical"
+                android:layout_alignParentLeft="true">
 
-                <ImageView
-                    android:layout_width="@dimen/_14sdp"
-                    android:layout_height="@dimen/_14sdp"
-                    android:src="@drawable/date"
-                    android:paddingRight="@dimen/_2sdp"/>
+                <LinearLayout
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentLeft="true">
 
-                <TextView
-                    android:id="@+id/txtDate"
+                    <ImageView
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:src="@drawable/ic_truck"
+                        android:paddingRight="@dimen/_2sdp"/>
+
+                    <TextView
+                        android:id="@+id/txtTruck"
+                        android:layout_width="@dimen/_75sdp"
+                        android:layout_height="wrap_content"
+                        android:text="B9100TAM"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+
+                    <ImageView
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:src="@drawable/ic_driver"
+                        android:paddingRight="@dimen/_2sdp"/>
+
+                    <TextView
+                        android:id="@+id/txtDriver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Donnyyyyyyyyyyyyyyy"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="@dimen/_10sdp"
-                    android:text="2017-07-10"
-                    android:textAllCaps="true"
-                    android:textColor="#000"
-                    android:textSize="@dimen/_12ssp" />
+                    android:orientation="horizontal"
+                    android:layout_alignParentLeft="true"
+                    android:paddingTop="@dimen/_3sdp">
 
-                <ImageView
-                    android:layout_width="@dimen/_14sdp"
-                    android:layout_height="@dimen/_14sdp"
-                    android:src="@drawable/time"
-                    android:paddingRight="@dimen/_2sdp"/>
+                    <ImageView
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:src="@drawable/date"
+                        android:paddingRight="@dimen/_2sdp"/>
 
-                <TextView
-                    android:id="@+id/txtHour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="13:04"
-                    android:textSize="@dimen/_12ssp"
-                    android:textColor="#000"
-                    android:textAllCaps="true"/>
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/_3sdp"
+                        android:text="26-APR-2017"
+                        android:textAllCaps="true"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:src="@drawable/time"
+                        android:paddingRight="@dimen/_2sdp"/>
+
+                    <TextView
+                        android:id="@+id/txtHour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13:04"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="#000"
+                        android:textAllCaps="true"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Announced"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="#757575"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"/>
 
-            <TextView
-                android:id="@+id/txtStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Announced"
-                android:textSize="@dimen/_12ssp"
-                android:textColor="#757575"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"/>
-
-        </RelativeLayout>
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
