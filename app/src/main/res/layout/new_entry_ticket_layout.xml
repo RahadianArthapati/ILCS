@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="60dip"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.gigamole.navigationtabstrip.NavigationTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="top|center_horizontal"
+            app:nts_active_color="#ff1748"
+            app:nts_color="#ff1748"
+            app:nts_factor="2.8"
+            app:nts_corners_radius="1dp"
+            app:nts_inactive_color="#ff1a1e23"
+            app:nts_size="15sp"
+            app:nts_titles="@array/entry_ticket"
+            app:nts_weight="5dp"/>
+
+    </FrameLayout>
+</FrameLayout>
