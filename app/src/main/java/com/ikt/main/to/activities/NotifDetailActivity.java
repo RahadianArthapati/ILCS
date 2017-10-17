@@ -34,7 +34,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Arifin on 6/1/16.
  */
-public class NotifDetailActivity extends BaseActivity implements IHttpResponse{
+public class NotifDetailActivity extends BaseActivity2 implements IHttpResponse{
 
     @Bind(R.id.toolbar_title)
     TextView toolbarTitle;
@@ -70,6 +70,11 @@ public class NotifDetailActivity extends BaseActivity implements IHttpResponse{
 
     @Override
     public boolean isAvailableSignout() {
+        return false;
+    }
+
+    @Override
+    public boolean isAvailableRefreshBtn() {
         return false;
     }
 

@@ -3,7 +3,9 @@ package com.ikt.main.to.adapter;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,14 +47,25 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         obj = data.get(position);
         holder.txtTRK.setText(obj.getVisitId());
+        Log.d("getAnnounce: ",obj.getAnnounce());
+        Log.d("getOperation: ",obj.getOperation());
+        Log.d("getComplete: ",obj.getComplete());
+        Log.d("getLeft: ",obj.getLeft());
 
         if (null == obj.getDriver() || obj.getDriver().equalsIgnoreCase("null")) {
-            holder.txtVia.setText(activity.getResources().getText(R.string.label_via_web));
+            holder.txtVia.setText(R.string.label_via_web);
         } else {
-            holder.txtVia.setText(activity.getResources().getText(R.string.label_via_mobile));
+            holder.txtVia.setText(R.string.label_via_mobile);
         }
 
-        if (!obj.getAnnounce().equalsIgnoreCase("null")) {
+        // Satrio
+        String an = obj.getAnnounce();
+        if (obj.getAnnounce().toString()==null || an.length() == 0 || obj.getAnnounce().equalsIgnoreCase("null")) {
+            Drawable drAnnounce = ContextCompat.getDrawable(activity, R.drawable.step_1);
+            holder.imgAnnounce.setImageDrawable(drAnnounce);
+            holder.footer_layout.setVisibility(View.GONE);
+        }
+        else {
             Drawable drAnnounce = ContextCompat.getDrawable(activity, R.drawable.step_1_success);
             holder.imgAnnounce.setImageDrawable(drAnnounce);
             holder.txtDate.setText(obj.getAnnounce());
@@ -60,10 +73,12 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
             holder.imgAnnounce.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.txtDate.setText(obj.getAnnounce());
-                    holder.txtStatus.setText(activity.getResources().getText(R.string.label_ANNOUNCE));
-                    holder.footer_layout.setVisibility(View.VISIBLE);
-                    listener.setAction(1, position, "announced");
+                    if (v.getId() == holder.imgAnnounce.getId()){
+                        holder.txtDate.setText(obj.getAnnounce());
+                        holder.txtStatus.setText(activity.getResources().getText(R.string.label_ANNOUNCE));
+                        holder.footer_layout.setVisibility(View.VISIBLE);
+                        listener.setAction(1, position, "announced");
+                    }
                 }
             });
 //            holder.imgAnnounce.setOnTouchListener(new View.OnTouchListener() {
@@ -84,7 +99,14 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
 
         }
 
-        if (!obj.getOperation().equalsIgnoreCase("null")) {
+        // Satrio
+        String op = obj.getOperation();
+        if (obj.getOperation().toString()==null || op.length() == 0 || obj.getOperation().equalsIgnoreCase("null")) {
+            Drawable drOperation = ContextCompat.getDrawable(activity, R.drawable.step_2);
+            holder.imgOperation.setImageDrawable(drOperation);
+            holder.footer_layout.setVisibility(View.GONE);
+        }
+        else {
             Drawable drOperation = ContextCompat.getDrawable(activity, R.drawable.step_2_success);
             holder.imgOperation.setImageDrawable(drOperation);
             holder.txtDate.setText(obj.getOperation());
@@ -92,10 +114,12 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
             holder.imgOperation.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.txtDate.setText(obj.getOperation());
-                    holder.txtStatus.setText(activity.getResources().getText(R.string.label_OPERATION));
-                    holder.footer_layout.setVisibility(View.VISIBLE);
-                    listener.setAction(1, position, "operation");
+                    if (v.getId() == holder.imgOperation.getId()) {
+                        holder.txtDate.setText(obj.getOperation());
+                        holder.txtStatus.setText(activity.getResources().getText(R.string.label_OPERATION));
+                        holder.footer_layout.setVisibility(View.VISIBLE);
+                        listener.setAction(1, position, "operation");
+                    }
                 }
             });
 //            holder.imgOperation.setOnTouchListener(new View.OnTouchListener() {
@@ -115,8 +139,14 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
 //            });
         }
 
-
-        if (!obj.getComplete().equalsIgnoreCase("null")) {
+        // Satrio
+        String co = obj.getComplete();
+        if (obj.getComplete().toString()==null || co.length() == 0 || obj.getComplete().equalsIgnoreCase("null")) {
+            Drawable drComplete = ContextCompat.getDrawable(activity, R.drawable.step_3);
+            holder.imgComplete.setImageDrawable(drComplete);
+            holder.footer_layout.setVisibility(View.GONE);
+        }
+        else {
             Drawable drComplete = ContextCompat.getDrawable(activity, R.drawable.step_3_success);
             holder.imgComplete.setImageDrawable(drComplete);
             holder.txtDate.setText(obj.getComplete());
@@ -124,10 +154,12 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
             holder.imgComplete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.txtDate.setText(obj.getComplete());
-                    holder.txtStatus.setText(activity.getResources().getText(R.string.label_COMPLETE));
-                    holder.footer_layout.setVisibility(View.VISIBLE);
-                    listener.setAction(1, position, "complete");
+                    if (v.getId() == holder.imgComplete.getId()) {
+                        holder.txtDate.setText(obj.getComplete());
+                        holder.txtStatus.setText(activity.getResources().getText(R.string.label_COMPLETE));
+                        holder.footer_layout.setVisibility(View.VISIBLE);
+                        listener.setAction(1, position, "complete");
+                    }
                 }
             });
 //            holder.imgComplete.setOnTouchListener(new View.OnTouchListener() {
@@ -147,8 +179,14 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
 //            });
         }
 
-
-        if (!obj.getLeft().equalsIgnoreCase("null")) {
+        // Satrio
+        String le = obj.getLeft();
+        if (obj.getLeft().toString()==null || le.length() == 0 || obj.getLeft().equalsIgnoreCase("null")) {
+            Drawable drLeft = ContextCompat.getDrawable(activity, R.drawable.step_4);
+            holder.imgLeft.setImageDrawable(drLeft);
+            holder.footer_layout.setVisibility(View.GONE);
+        }
+        else {
             Drawable drLeft = ContextCompat.getDrawable(activity, R.drawable.step_4_success);
             holder.imgLeft.setImageDrawable(drLeft);
             holder.txtDate.setText(obj.getLeft());
@@ -156,8 +194,12 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
             holder.imgLeft.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.footer_layout.setVisibility(View.VISIBLE);
-                    listener.setAction(1, position, "left");
+                    if (v.getId() == holder.imgLeft.getId()) {
+                        holder.txtDate.setText(obj.getLeft());
+                        holder.txtStatus.setText(activity.getResources().getText(R.string.label_LEFT));
+                        holder.footer_layout.setVisibility(View.VISIBLE);
+                        listener.setAction(1, position, "left");
+                    }
                 }
             });
 //            holder.imgLeft.setOnTouchListener(new View.OnTouchListener() {
@@ -199,7 +241,7 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
         private ImageView imgOperation;
         private ImageView imgComplete;
         private ImageView imgLeft;
-        private RelativeLayout truckActivitiesLayout;
+        private CardView truckActivitiesLayout;
         private TableLayout footer_layout;
 
         public ViewHolder(View itemView) {
@@ -213,7 +255,7 @@ public class TruckActivitiesDetailAdapter extends RecyclerView.Adapter<TruckActi
             imgComplete = (ImageView) itemView.findViewById(R.id.imgComplete);
             imgLeft = (ImageView) itemView.findViewById(R.id.imgLeft);
 
-            truckActivitiesLayout = (RelativeLayout) itemView.findViewById(R.id.rowTruckActivities);
+            truckActivitiesLayout = (CardView) itemView.findViewById(R.id.rowTruckActivities);
             footer_layout = (TableLayout) itemView.findViewById(R.id.footer_layout);
         }
     }

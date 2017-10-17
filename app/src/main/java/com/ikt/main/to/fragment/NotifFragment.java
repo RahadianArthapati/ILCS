@@ -47,6 +47,12 @@ public class NotifFragment extends Fragment implements TapView{
     private ArrayList<HashMap<String, String>> listItems = new ArrayList<HashMap<String, String>>();
     private DBHelper dbHelper;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -108,6 +114,10 @@ public class NotifFragment extends Fragment implements TapView{
         super.onPrepareOptionsMenu(menu);
         menu.findItem(R.id.action_refresh).setVisible(true);
         menu.findItem(R.id.action_search).setVisible(false);
+        menu.findItem(R.id.action_my_account).setVisible(false);
+        menu.findItem(R.id.action_notif).setVisible(false);
+        menu.findItem(R.id.action_language).setVisible(false);
+        menu.findItem(R.id.action_sign_out).setVisible(false);
     }
 
     @Override
