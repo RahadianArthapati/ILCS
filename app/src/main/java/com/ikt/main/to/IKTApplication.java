@@ -17,6 +17,9 @@ import com.google.android.gcm.GCMRegistrar;
 import com.ikt.main.to.R;
 import com.ikt.main.to.util.Config;
 
+import org.acra.ACRA;
+import org.acra.annotation.ReportsCrashes;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -32,6 +35,7 @@ import io.fabric.sdk.android.Fabric;
 /**
  * Created by Arifin on 2/7/16.
  */
+
 public class IKTApplication extends Application {
 
 
@@ -55,7 +59,6 @@ public class IKTApplication extends Application {
         super.onCreate();
         instance = this;
         Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
-
     }
 
     // Register this account with the server.

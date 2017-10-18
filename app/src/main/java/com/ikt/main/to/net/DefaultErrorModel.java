@@ -27,7 +27,7 @@ public class DefaultErrorModel {
         try {
             new JSONObject(json);
         } catch (JSONException e) {
-            setError("Unknown Response from server");
+            setError("Something went wrong on our server");
             throw new APPException(getErrorMessage());
         }
     }
@@ -36,10 +36,9 @@ public class DefaultErrorModel {
         try {
             new JSONArray(json);
         } catch (JSONException e) {
-            setError("Unknown Response from server");
+            setError("Something went wrong on our server");
             throw new APPException(getErrorMessage());
         }
     }
 
-    
 }
