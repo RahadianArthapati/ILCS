@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
@@ -247,7 +248,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
             IParser parser = (IParser) result;
             if(!parser.isError()){
                 ArrayList<TruckActivitiesDetailObject> ticketDetailsArr = VectorModel.getInstance().getTruckActivitiesDetailObjects();
-                if(ticketDetailsArr != null){
+                if(ticketDetailsArr != null || !(data.isEmpty())){
                     data.clear();
                     data.addAll(ticketDetailsArr);
                 }

@@ -17,9 +17,6 @@ import com.google.android.gcm.GCMRegistrar;
 import com.ikt.main.to.R;
 import com.ikt.main.to.util.Config;
 
-import org.acra.ACRA;
-import org.acra.annotation.ReportsCrashes;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
