@@ -21,7 +21,7 @@
             app:nts_factor="2.8"
             app:nts_corners_radius="1dp"
             app:nts_inactive_color="#ff1a1e23"
-            app:nts_size="15sp"
+            app:nts_size="12sp"
             app:nts_titles="@array/entry_ticket"
             app:nts_weight="5dp"/>
 

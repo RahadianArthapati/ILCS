@@ -290,6 +290,11 @@ public class EditVisitActivity extends AppCompatActivity implements IHttpRespons
                     }
                 } else {
                     Toast.makeText(this, "Edit success", Toast.LENGTH_SHORT).show();
+                    // Satrio
+                    Intent intent = new Intent(this, HomeActivity.class);
+                    intent.putExtra("pos", 1);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                     finish();
                 }
             }

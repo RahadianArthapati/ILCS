@@ -44,7 +44,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-public class StatusTicketDetailActivity extends BaseActivity implements IHttpResponse, View.OnClickListener {
+public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpResponse, View.OnClickListener {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -182,22 +182,27 @@ public class StatusTicketDetailActivity extends BaseActivity implements IHttpRes
 
     @Override
     public boolean isAvailableMyAccBtn() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isAvailableLangBtn() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isAvailableNotifBtn() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isAvailableSignout() {
-        return true;
+        return false;
+    }
+
+    @Override
+    public boolean isAvailableRefreshBtn() {
+        return false;
     }
 
     @Override

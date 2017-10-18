@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -183,8 +184,10 @@ public class AssignTicketFragment extends Fragment implements TapView, IHttpResp
             SearchView.SearchAutoComplete theTextArea = (SearchView.SearchAutoComplete) searchView
                     .findViewById(R.id.search_src_text);
             theTextArea.setTextColor(ContextCompat.getColor(getActivity(), android.R.color.white));
+            theTextArea.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
         }
         if (searchView != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
             queryTextListener = new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextChange(String query) {

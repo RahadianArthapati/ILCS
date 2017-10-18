@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -35,6 +36,12 @@ public class EntryTicketFragment extends Fragment {
 
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,5 +65,16 @@ public class EntryTicketFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        menu.findItem(R.id.action_refresh).setVisible(true);
+        menu.findItem(R.id.action_search).setVisible(true);
+        menu.findItem(R.id.action_my_account).setVisible(false);
+        menu.findItem(R.id.action_notif).setVisible(false);
+        menu.findItem(R.id.action_language).setVisible(false);
+        menu.findItem(R.id.action_sign_out).setVisible(false);
     }
 }
