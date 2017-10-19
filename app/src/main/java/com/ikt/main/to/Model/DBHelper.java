@@ -134,7 +134,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // insert row
         long id = db.insert(TABLE_DRIVER, null, values);
-
+        db.close();
         return id;
     }
 
@@ -278,6 +278,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(KEY_SESSION, object.getSession());
         values.put(KEY_CREATED_AT, getDateTime());
         long id = db.insert(TABLE_PROFILE, null, values);
+        db.close();
         return id;
 
     }
@@ -333,6 +334,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(KEY_PLAT_NO_CODE, object.getPlatNoCode());
 
         long id = db.insert(TABLE_TRUCK, null, values);
+        db.close();
         return id;
 
     }
@@ -453,6 +455,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // insert row
         long id = db.insert(TABLE_NOTIF, null, values);
+        db.close();
         return id;
     }
 
