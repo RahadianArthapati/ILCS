@@ -50,15 +50,24 @@ public class TruckActivitiesDetailObject implements Serializable{
     private String last_status;
     private String created_by;
 
-    public boolean isShowName;
-
-    public boolean isShowName() {
+    private boolean isShowName;
+    public boolean getIsShowName() {
         return isShowName;
     }
-
-    // Satrio
     public void setIsShowName(boolean showName) {
         isShowName = showName;
+    }
+
+    private String isShowDate;
+    public String getIsShowDate() { return isShowDate; }
+    public void setIsShowDate(String showDate) {
+        isShowDate = showDate;
+    }
+
+    private String isShowStatus;
+    public String getIsShowStatus() { return isShowStatus; }
+    public void setIsShowStatus(String showStatus) {
+        isShowStatus = showStatus;
     }
 
     public String getVisitId() {
