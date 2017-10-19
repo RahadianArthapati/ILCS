@@ -197,7 +197,6 @@ public class TruckAcitivitiesFragment extends Fragment implements IHttpResponse,
         }
         if (searchView != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
-
             queryTextListener = new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextChange(String query) {
@@ -225,6 +224,7 @@ public class TruckAcitivitiesFragment extends Fragment implements IHttpResponse,
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     Log.i("onQueryTextSubmit", query);
+                    searchView.clearFocus();
                     return true;
                 }
             };

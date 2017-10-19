@@ -135,7 +135,6 @@ public class AssignTicketFragment extends Fragment implements TapView, IHttpResp
 
     @Override
     public void onStarted(Context context, int pid) {
-        Utility.hideKeyboard(getActivity());
     }
 
     @Override
@@ -174,12 +173,31 @@ public class AssignTicketFragment extends Fragment implements TapView, IHttpResp
     }
 
     @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        menu.findItem(R.id.action_refresh).setVisible(true);
+        menu.findItem(R.id.action_search).setVisible(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_refresh) {
+            getTickets();
+            return true;
+        } else if (item.getItemId() == R.id.action_search) {
+            return false;
+        }
+
+        searchView.setOnQueryTextListener(queryTextListener);
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
 
         if (searchItem != null) {
-            searchItem.expandActionView();
             searchView = (SearchView) searchItem.getActionView();
             SearchView.SearchAutoComplete theTextArea = (SearchView.SearchAutoComplete) searchView
                     .findViewById(R.id.search_src_text);
@@ -197,7 +215,7 @@ public class AssignTicketFragment extends Fragment implements TapView, IHttpResp
                         if (query != null && query.length() > 0) {
                             ArrayList<TicketObject> arrFilter = new ArrayList<TicketObject>();
                             for (TicketObject to : arrDatas) {
-                                if (to.getVisitId().toLowerCase().contains(query.toLowerCase())) {
+                                if (to.getVisitId().contains(query)) {
                                     arrFilter.add(to);
                                 }
                             }
@@ -215,12 +233,11 @@ public class AssignTicketFragment extends Fragment implements TapView, IHttpResp
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     Log.i("onQueryTextSubmit", query);
+                    searchView.clearFocus();
                     return true;
                 }
             };
             searchView.setOnQueryTextListener(queryTextListener);
-
-            searchView.onActionViewExpanded();
             final int textViewID = searchView.getResources().getIdentifier("android:id/search_src_text",null, null);
             final AutoCompleteTextView searchTextView = (AutoCompleteTextView) searchView.findViewById(textViewID);
             try {
@@ -251,25 +268,5 @@ public class AssignTicketFragment extends Fragment implements TapView, IHttpResp
     public void onResume() {
         getTickets();
         super.onResume();
-    }
-
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.action_refresh).setVisible(true);
-        menu.findItem(R.id.action_search).setVisible(true);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_refresh) {
-            getTickets();
-            return true;
-        } else if (item.getItemId() == R.id.action_search) {
-            return false;
-        }
-
-        searchView.setOnQueryTextListener(queryTextListener);
-        return super.onOptionsItemSelected(item);
     }
 }
