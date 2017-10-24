@@ -283,7 +283,7 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
     @Override
     public void onClick(View view) {
         if (view == buttonViewStatus) {
-            Intent i = new Intent(this, TruckActivitiesDetailActivity.class);
+            Intent i = new Intent(this, ViewStatusTicketDetailActivity.class);
             i.putExtra("position", pos);
             i.putExtra("visitId", visitId);
             i.putExtra("driver", mObjectDetail.getDriverName());
