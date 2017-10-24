@@ -171,7 +171,7 @@ public class DriverFragment extends Fragment implements View.OnClickListener, Ta
     }
 
     private void getDrivers() {
-        /*HttpTask task = new HttpTask(getActivity(), Config.URL_DRIVER, 1001, Config.POST, this, DriverParser.class);
+        HttpTask task = new HttpTask(getActivity(), Config.URL_DRIVER, 1001, Config.POST, this, DriverParser.class);
         task.setProcessName(getString(R.string.loading_load));
         List<NameValuePair> post = new ArrayList<NameValuePair>();
         post.add(new BasicNameValuePair(Config.KEY_ORG_ID, orgId));
@@ -183,20 +183,7 @@ public class DriverFragment extends Fragment implements View.OnClickListener, Ta
         task.setPostData(post);
         task.setEnabledProgressDialog(true);
         task.setCancelableProgressDialog(true);
-        HttpManager.getInstance().doRequest(task);*/
-
-        // Satrio
-        drivers = new ArrayList<DriverObject>();
-        int count = dbHelper.getDriverCount();
-        if (count > 0) {
-            List<DriverObject> arrDriver = dbHelper.getAllDriver();
-            for (int i = 0; i < arrDriver.size(); i++) {
-                DriverObject driver = arrDriver.get(i);
-                drivers.add(driver);
-            }
-        }
-        adapter = new DriverAdapter(getActivity(), drivers, this);
-        listView.setAdapter(adapter);
+        HttpManager.getInstance().doRequest(task);
     }
 
     private void deleteDrivers(String id) {
@@ -287,6 +274,18 @@ public class DriverFragment extends Fragment implements View.OnClickListener, Ta
                 Toast.makeText(getActivity(), getString(R.string.success_message_delete_driver), Toast.LENGTH_SHORT).show();
             }
         }
+        // Satrio
+        drivers = new ArrayList<DriverObject>();
+        int count = dbHelper.getDriverCount();
+        if (count > 0) {
+            List<DriverObject> arrDriver = dbHelper.getAllDriver();
+            for (int i = 0; i < arrDriver.size(); i++) {
+                DriverObject driver = arrDriver.get(i);
+                drivers.add(driver);
+            }
+        }
+        adapter = new DriverAdapter(getActivity(), drivers, this);
+        listView.setAdapter(adapter);
     }
 
     @Override

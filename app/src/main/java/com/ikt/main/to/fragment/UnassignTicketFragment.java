@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -142,11 +143,11 @@ public class UnassignTicketFragment extends Fragment implements TapView, IHttpRe
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
 
         if (searchItem != null) {
-            searchItem.expandActionView();
             searchView = (SearchView) searchItem.getActionView();
             SearchView.SearchAutoComplete theTextArea = (SearchView.SearchAutoComplete) searchView
                     .findViewById(R.id.search_src_text);
             theTextArea.setTextColor(ContextCompat.getColor(getActivity(), android.R.color.white));
+            theTextArea.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
         }
         if (searchView != null) {
             queryTextListener = new SearchView.OnQueryTextListener() {
@@ -158,7 +159,7 @@ public class UnassignTicketFragment extends Fragment implements TapView, IHttpRe
                         if (query!=null && query.length()>0) {
                             ArrayList<TicketObject> arrFilter = new ArrayList<TicketObject>();
                             for (TicketObject to : arrDatas) {
-                                if (to.getVisitId().toLowerCase().contains(query.toLowerCase())) {
+                                if (to.getVisitId().contains(query)) {
                                     arrFilter.add(to);
                                 }
                             }
@@ -179,7 +180,6 @@ public class UnassignTicketFragment extends Fragment implements TapView, IHttpRe
                 }
             };
             searchView.setOnQueryTextListener(queryTextListener);
-            searchView.onActionViewExpanded();
             final int textViewID = searchView.getResources().getIdentifier("android:id/search_src_text",null, null);
             final AutoCompleteTextView searchTextView = (AutoCompleteTextView) searchView.findViewById(textViewID);
             try {

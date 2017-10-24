@@ -104,6 +104,10 @@ public class MyAccountFragment extends Fragment implements CompoundButton.OnChec
         super.onPrepareOptionsMenu(menu);
         menu.findItem(R.id.action_refresh).setVisible(false);
         menu.findItem(R.id.action_search).setVisible(false);
+        menu.findItem(R.id.action_language).setVisible(false);
+        menu.findItem(R.id.action_my_account).setVisible(false);
+        menu.findItem(R.id.action_notif).setVisible(false);
+        menu.findItem(R.id.action_sign_out).setVisible(false);
     }
 
     @Override

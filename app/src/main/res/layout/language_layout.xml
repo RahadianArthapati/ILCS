@@ -18,6 +18,7 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/rlIndo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
@@ -46,6 +47,7 @@
                 android:background="@android:color/black" />
 
             <RelativeLayout
+                android:id="@+id/rlEng"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
@@ -72,6 +74,19 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
                 android:background="@android:color/black" />
+
+            <Button
+                android:id="@+id/btnConfirmLang"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/rounded_button_dark"
+                android:text="Confirm"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,16 +80,25 @@ public class SearchTruckActivity extends BaseActivity2 implements SearchView.OnQ
         orgId = PreferenceManagers.getData(Config.KEY_ORG_ID, this);
         trucks = new ArrayList<TruckObject>();
         adapter = new SearchTruckAdapter(this, trucks,this);
-        listView.setAdapter(adapter);
+
         // Satrio
+        showTrucks();
+    }
+
+    private void show(){
+        listView.setAdapter(adapter);
+        arrTruck = dbHelper.getAllTruck();
+        for (int i = 0; i < arrTruck.size(); i++) {
+            TruckObject truck = arrTruck.get(i);
+            trucks.add(truck);
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+    private void showTrucks(){
         int count = dbHelper.getTruckCount();
         if (count > 0) {
-            arrTruck = dbHelper.getAllTruck();
-            for (int i = 0; i < arrTruck.size(); i++) {
-                TruckObject truck = arrTruck.get(i);
-                trucks.add(truck);
-            }
-            adapter.notifyDataSetChanged();
+            show();
         } else {
             getTrucks();
         }
@@ -136,13 +146,24 @@ public class SearchTruckActivity extends BaseActivity2 implements SearchView.OnQ
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_refresh) {
+            getTrucks();
+            return true;
+        } else if (item.getItemId() == R.id.action_search) {
+            return false;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         searchMenuItem = menu.findItem(R.id.action_search);
-        searchMenuItem.expandActionView();
+//        searchMenuItem.expandActionView();
         mSearchView = (SearchView) searchMenuItem.getActionView();
         mSearchView.setOnQueryTextListener(this);
-        mSearchView.onActionViewExpanded();
+//        mSearchView.onActionViewExpanded();
 //        mSearchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         final int textViewID = mSearchView.getResources().getIdentifier("android:id/search_src_text",null, null);
         final AutoCompleteTextView searchTextView = (AutoCompleteTextView) mSearchView.findViewById(textViewID);
@@ -182,14 +203,14 @@ public class SearchTruckActivity extends BaseActivity2 implements SearchView.OnQ
 
     @Override
     public boolean isAvailableRefreshBtn() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
         int count = dbHelper.getTruckCount();
         if(count > 0) {
-            List<TruckObject> arrTruck = dbHelper.getTruckByPlat(query);
+            /*List<TruckObject> */arrTruck = dbHelper.getTruckByPlat(query);
             trucks.clear();
             for (int i = 0; i < arrTruck.size(); i++) {
                 TruckObject truck = arrTruck.get(i);
@@ -228,13 +249,14 @@ public class SearchTruckActivity extends BaseActivity2 implements SearchView.OnQ
         if(result instanceof TruckParser){
             IParser parser = (IParser) result;
             if(!parser.isError()){
-                List<TruckObject> arrTruck = dbHelper.getTruckByPlat(query);
+                /*List<TruckObject> */arrTruck = dbHelper.getTruckByPlat(query);
                 trucks.clear();
                 for (int i = 0; i < arrTruck.size(); i++) {
                     TruckObject truck = arrTruck.get(i);
                     trucks.add(truck);
                 }
                 adapter.notifyDataSetChanged();
+                show();
             }
         }
     }

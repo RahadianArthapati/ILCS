@@ -70,6 +70,7 @@ public class SearchDriverActivity extends BaseActivity2 implements TapView, Sear
     private String orgId;
     private String query;
     private List<DriverObject> arrDriver;
+    private SearchView.OnQueryTextListener queryTextListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,10 @@ public class SearchDriverActivity extends BaseActivity2 implements TapView, Sear
         adapter = new DriverAdapter(this, drivers, this);
         listView.setAdapter(adapter);
         btnAddDriver.setOnClickListener(this);
+        showDriver();
+    }
+
+    private void showDriver(){
         int count = dbHelper.getDriverCount();
         if (count > 0) {
             arrDriver = dbHelper.getAllDriver();
@@ -127,13 +132,27 @@ public class SearchDriverActivity extends BaseActivity2 implements TapView, Sear
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_refresh) {
+//            showDriver();
+            getDrivers();
+            return true;
+        } else if (item.getItemId() == R.id.action_search) {
+            return false;
+        }
+
+        mSearchView.setOnQueryTextListener(queryTextListener);
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         searchMenuItem = menu.findItem(R.id.action_search);
-        searchMenuItem.expandActionView();
+//        searchMenuItem.expandActionView();
         mSearchView = (SearchView) searchMenuItem.getActionView();
         mSearchView.setOnQueryTextListener(this);
-        mSearchView.onActionViewExpanded();
+//        mSearchView.onActionViewExpanded();
 //        mSearchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         final int textViewID = mSearchView.getResources().getIdentifier("android:id/search_src_text", null, null);
         final AutoCompleteTextView searchTextView = (AutoCompleteTextView) mSearchView.findViewById(textViewID);
@@ -174,7 +193,7 @@ public class SearchDriverActivity extends BaseActivity2 implements TapView, Sear
 
     @Override
     public boolean isAvailableRefreshBtn() {
-        return false;
+        return true;
     }
 
     //    @Override
@@ -200,6 +219,7 @@ public class SearchDriverActivity extends BaseActivity2 implements TapView, Sear
 //            this.query = query;
 //            getDrivers();
 //        }
+        mSearchView.clearFocus();
         return false;
     }
 
@@ -275,8 +295,8 @@ public class SearchDriverActivity extends BaseActivity2 implements TapView, Sear
         if (result instanceof DriverParser) {
             IParser parser = (IParser) result;
             if (!parser.isError()) {
-                drivers.clear();
                 arrDriver = dbHelper.getAllDriver();
+                drivers.clear();
                 for (int i = 0; i < arrDriver.size(); i++) {
                     DriverObject driver = arrDriver.get(i);
                     drivers.add(driver);
