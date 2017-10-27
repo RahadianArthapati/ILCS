@@ -115,6 +115,33 @@ public class TickerParser extends DefaultErrorModel implements IParser {
                 }
             }
 
+            arrData = jsonObject.optJSONArray("data");
+            if(arrData != null) {
+                VectorModel.getInstance().clearListEntryTicketObjects();
+                for(int i=0;i < arrData.length();i++){
+                    JSONObject object = arrData.optJSONObject(i);
+                    TicketObject ticketObject = new TicketObject();
+                    String visitId = object.optString("VISIT_ID");
+                    ticketObject.setVisitId(visitId);
+
+                    String platNo = object.optString("TRUCK");
+                    ticketObject.setPlatNo(platNo);
+
+                    String driver = object.optString("DRIVER");
+                    ticketObject.setDriverName(driver);
+
+                    String begin = object.optString("BEGIN");
+                    ticketObject.setBegin(begin);
+
+                    String end = object.optString("END");
+                    ticketObject.setEnd(end);
+
+                    String type = object.optString("TYPE");
+                    ticketObject.setType(type);
+                    VectorModel.getInstance().setListEntryTicketObjects(ticketObject);
+                }
+            }
+
         } catch (JSONException e) {
             setError(e.getMessage());
         }

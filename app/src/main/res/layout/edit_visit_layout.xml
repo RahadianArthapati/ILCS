@@ -174,9 +174,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_marginTop="48dp">
+                    android:layout_marginTop="48dp"
+                    android:visibility="gone">
 
-                    <Button
+                    <!--<Button
                         android:id="@+id/btnSave"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -186,7 +187,7 @@
                         android:onClick="onClick"
                         android:text="Save"
                         android:textAllCaps="false"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white" />-->
 
                     <Button
                         android:id="@+id/btnCancel"
@@ -204,29 +205,31 @@
                     android:id="@+id/btnVinIncoming"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="80dp"
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:background="@drawable/rounded_button_dark"
                     android:onClick="onClick"
                     android:text="Edit VIN Incoming"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:visibility="gone"/>
 
                 <Button
                     android:id="@+id/btnVinOrTripOutgoing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="80dp"
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:background="@drawable/rounded_button_dark"
                     android:onClick="onClick"
                     android:text="Edit VIN Outgoing"
                     android:layout_marginBottom="@dimen/activity_vertical_margin"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/white" />
-                <Button
+                    android:textColor="@android:color/white"
+                    android:visibility="gone"/>
+                <!--<Button
                     android:id="@+id/btnSaveAndNext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -238,10 +241,54 @@
                     android:onClick="onClick"
                     android:text="Save &amp; Continue"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white" />-->
             </LinearLayout>
         </ScrollView>
 
+        <LinearLayout
+            android:id="@+id/llButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_alignParentBottom="true"
+            android:background="#e0e0e0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:text="Save"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/rounded_button"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/btnSaveAndNext"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:text="Save &amp; Continue"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_button"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 

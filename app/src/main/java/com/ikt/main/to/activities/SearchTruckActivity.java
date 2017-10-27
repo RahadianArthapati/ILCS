@@ -208,9 +208,9 @@ public class SearchTruckActivity extends BaseActivity2 implements SearchView.OnQ
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        int count = dbHelper.getTruckCount();
+        /*int count = dbHelper.getTruckCount();
         if(count > 0) {
-            /*List<TruckObject> */arrTruck = dbHelper.getTruckByPlat(query);
+            *//*List<TruckObject> *//*arrTruck = dbHelper.getTruckByPlat(query);
             trucks.clear();
             for (int i = 0; i < arrTruck.size(); i++) {
                 TruckObject truck = arrTruck.get(i);
@@ -220,13 +220,62 @@ public class SearchTruckActivity extends BaseActivity2 implements SearchView.OnQ
         }else {
             this.query = query;
             getTrucks();
-        }
+        }*/
 
+        mSearchView.clearFocus();
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
+        /*int count = dbHelper.getTruckCount();
+        if(count > 0) {
+            *//*List<TruckObject> *//*arrTruck = dbHelper.getTruckByPlat(query);
+            trucks.clear();
+            for (int i = 0; i < arrTruck.size(); i++) {
+                TruckObject truck = arrTruck.get(i);
+                trucks.add(truck);
+            }
+            adapter.notifyDataSetChanged();
+        }else {
+            this.query = query;
+            getTrucks();
+        }*/
+
+
+        if (!newText.isEmpty()) {
+            if (arrTruck != null && arrTruck.size() > 0) {
+                trucks.clear();
+                for (int i = 0; i < arrTruck.size(); i++) {
+                    String truckPlat = arrTruck.get(i).getPlatNo();
+                    if (truckPlat.toLowerCase().contains(newText.toLowerCase())) {
+                        TruckObject truck = arrTruck.get(i);
+                        trucks.add(truck);
+                    }
+                }
+            }else{
+                arrTruck = dbHelper.getAllTruck();
+                for (int i = 0; i < arrTruck.size(); i++) {
+                    String truckPlat = arrTruck.get(i).getPlatNo();
+                    if (truckPlat.toLowerCase().contains(newText.toLowerCase())) {
+                        TruckObject truck = arrTruck.get(i);
+                        trucks.add(truck);
+                    }
+                }
+            }
+        } else {
+            int count = dbHelper.getTruckCount();
+            if (count > 0) {
+                trucks.clear();
+                arrTruck = dbHelper.getAllTruck();
+                for (int i = 0; i < arrTruck.size(); i++) {
+                    TruckObject truck = arrTruck.get(i);
+                    trucks.add(truck);
+                }
+            }
+        }
+        adapter.notifyDataSetChanged();
+
         return false;
     }
 

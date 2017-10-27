@@ -126,6 +126,10 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
             pos = bundle.getInt("position", -1);
             visitId = bundle.getString("visitId");
             isAssign = bundle.getBoolean("isAssign");
+            // Satrio
+            if (!isAssign) {
+                buttonAssign.setVisibility(View.GONE);
+            }
         }
 
         setToolBar();

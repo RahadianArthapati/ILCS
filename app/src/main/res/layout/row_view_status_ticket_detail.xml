@@ -21,7 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccentPrimary"
             android:orientation="vertical">
 
             <TextView
@@ -106,7 +106,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccentPrimary"
             android:orientation="vertical">
 
             <TextView
@@ -191,15 +191,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccentPrimary"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:paddingBottom="5dp"
                 android:paddingTop="5dp"
-                android:layout_gravity="center"
                 android:text="COMPLETE" />
 
         </LinearLayout>
@@ -276,7 +276,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccentPrimary"
             android:orientation="vertical">
 
             <TextView

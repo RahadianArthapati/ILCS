@@ -21,27 +21,27 @@
         <Button
             android:id="@+id/btnNo"
             android:layout_width="60dp"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_button_grey"
+            android:background="@drawable/rounded_button"
             android:text="No"
-            android:textColor="@color/bpWhite" />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnYes"
             android:layout_width="60dp"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:layout_gravity="right"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_button_dark"
+            android:background="@drawable/rounded_button"
             android:text="Yes"
-            android:textColor="@color/bpWhite" />
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
 </LinearLayout>

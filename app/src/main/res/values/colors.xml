@@ -2,8 +2,10 @@
 <resources>
     <!--<color name="colorPrimary">@color/bg_color</color>-->
     <!--<color name="colorPrimaryDark">@color/box</color>-->
-    <color name="colorPrimary">@color/redColorPrimary</color>
-    <color name="colorPrimaryDark">@color/redColorPrimaryDark</color>
+    <color name="colorPrimary">@color/blueColorPrimary</color>
+    <color name="colorPrimaryDark">@color/blueColorPrimaryDark</color>
+    <color name="colorAccentPrimary">@color/bluecolorAccent</color>
+    <color name="colorButtonPrimary">@color/orangeButton</color>
     <color name="colorAccent">@color/wallet_highlighted_text_holo_light</color>
     <color name="blue_color">#0073BC</color>
     <color name="status_bar">#40000000</color>
@@ -28,6 +30,13 @@
     <color name="redColorPrimaryDark">@color/red_900</color>
     <color name="orangeColorPrimary">@color/orange_700</color>
     <color name="orangeColorPrimaryDark">@color/orange_900</color>
+    <color name="blueColorPrimary">#0277bd</color>
+    <color name="blueColorPrimaryDark">#004c8c</color>
+    <color name="bluecolorAccent">#58a5f0</color>
+
+    <color name="blackButton">#222222</color>
+    <color name="orangeButton">#ff6f00</color>
+
 
     <!--reds-->
     <color name="red_50">#FFEBEE</color>

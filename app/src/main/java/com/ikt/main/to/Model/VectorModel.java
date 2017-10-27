@@ -46,6 +46,8 @@ public class VectorModel {
 
     public ArrayList<ObjectNewSlot> objectNewSlotsIn;
     public ArrayList<ObjectNewSlot> objectNewSlotsOut;
+    // Satrio
+    public ArrayList<TicketObject> listEntryTicketObjects;
 
 
     public VectorModel(){
@@ -75,6 +77,8 @@ public class VectorModel {
 
         objectNewSlotsIn = new ArrayList<ObjectNewSlot>();
         objectNewSlotsOut = new ArrayList<ObjectNewSlot>();
+        // Satrio
+        listEntryTicketObjects = new ArrayList<TicketObject>();
     }
 
     public static VectorModel getInstance(){
@@ -83,6 +87,22 @@ public class VectorModel {
         }
         return instance;
     }
+
+    // Satrio
+    public ArrayList<TicketObject> getListEntryTicketObjects() {
+        return listEntryTicketObjects;
+    }
+
+    public void setListEntryTicketObjects(TicketObject listTicketObject) {
+        listEntryTicketObjects.add(listTicketObject);
+    }
+
+    public void clearListEntryTicketObjects(){
+        if(listEntryTicketObjects != null && listEntryTicketObjects.size() > 0){
+            listEntryTicketObjects.clear();
+        }
+    }
+    // End
 
     public ArrayList<TimeSlotObject> getTimeSlotObjectVector() {
         return timeSlotObjectVector;

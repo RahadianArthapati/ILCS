@@ -5,112 +5,133 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"/>
-
-    <com.ikt.main.to.component.MaterialEditText
-        android:id="@+id/edtTgl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="30dp"
-        android:hint="Date"
-        android:inputType="text"
-        android:clickable="true"
-        android:cursorVisible="false"
-        android:focusable="false"
-        android:visibility="gone"
-        android:focusableInTouchMode="false"
-        android:textCursorDrawable="@drawable/text_cursor"
-        app:met_baseColor="@android:color/black"
-        app:met_floatingLabel="highlight"
-        app:met_primaryColor="@android:color/black"
-        app:met_singleLineEllipsis="true" />
-
-    <LinearLayout
-        android:id="@+id/llSpinDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_spinner">
-
-        <Spinner
-            android:id="@+id/spinDate"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="3dp"
-            android:gravity="center_vertical"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"/>
 
-    <LinearLayout
-        android:id="@+id/llSpinSlot"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_spinner">
+        android:layout_height="match_parent">
 
-        <Spinner
-            android:id="@+id/spinSlot"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="3dp"
-            android:gravity="center_vertical"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/llSpinArea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/rounded_spinner">
+            <com.ikt.main.to.component.MaterialEditText
+                android:id="@+id/edtTgl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="Date"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/text_cursor"
+                android:visibility="gone"
+                app:met_baseColor="@android:color/black"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="@android:color/black"
+                app:met_singleLineEllipsis="true" />
 
-        <Spinner
-            android:id="@+id/spinArea"
+            <LinearLayout
+                android:id="@+id/llSpinDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_spinner">
+
+                <Spinner
+                    android:id="@+id/spinDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSpinSlot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_spinner">
+
+                <Spinner
+                    android:id="@+id/spinSlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSpinArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_spinner">
+
+                <Spinner
+                    android:id="@+id/spinArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBtn"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="3dp"
-            android:gravity="center_vertical"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp" />
-    </LinearLayout>
+            android:layout_height="@dimen/_50sdp"
+            android:layout_alignParentBottom="true"
+            android:background="#e0e0e0">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rounded_button_dark"
-        android:text="@string/next"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>

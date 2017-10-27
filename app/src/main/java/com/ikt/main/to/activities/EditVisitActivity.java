@@ -126,7 +126,8 @@ public class EditVisitActivity extends AppCompatActivity implements IHttpRespons
                 btnVinOrTripOutgoing.setText("Edit TRIP for Outgoing");
             }
         }else{
-            btnSaveAndNext.setText("Save & Continue To " + editTicketObject.getTripOrVin() + " Edit");
+//            btnSaveAndNext.setText("Save & Continue To " + editTicketObject.getTripOrVin() + " Edit");
+            btnSaveAndNext.setText("Save & Edit " + editTicketObject.getTripOrVin().toUpperCase());
             btnSaveAndNext.setVisibility(View.VISIBLE);
             btnVinIncoming.setVisibility(View.GONE);
             btnVinOrTripOutgoing.setVisibility(View.GONE);
@@ -293,7 +294,7 @@ public class EditVisitActivity extends AppCompatActivity implements IHttpRespons
                     // Satrio
                     Intent intent = new Intent(this, HomeActivity.class);
                     intent.putExtra("pos", 1);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP /*| Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK*/);
                     startActivity(intent);
                     finish();
                 }

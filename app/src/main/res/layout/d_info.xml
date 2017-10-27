@@ -101,15 +101,15 @@
             <Button
                 android:id="@+id/btnNext"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
                 android:layout_marginLeft="@dimen/_8sdp"
                 android:layout_marginRight="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_24sdp"
                 android:text="OK"
-                android:textSize="@dimen/_14ssp"
-                android:textStyle="bold" />
+                android:background="@drawable/rounded_button"
+                android:textColor="@android:color/white"  />
 
         </LinearLayout>
 

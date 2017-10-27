@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.ikt.main.to.fragment.NewEntryTicketFragment;
 import com.ikt.main.to.model.DBHelper;
 import com.ikt.main.to.R;
 import com.ikt.main.to.adapter.LeftMenuAdapter;
@@ -158,7 +159,7 @@ public class HomeActivity extends BaseActivity implements TapView {
                 fr = new AnnouncementFragment();
                 break;
             case 1:
-                fr = new EntryTicketFragment();
+                fr = new NewEntryTicketFragment();
                 break;
             case 2:
                 fr = new TruckAcitivitiesFragment();
@@ -269,7 +270,7 @@ public class HomeActivity extends BaseActivity implements TapView {
                         replaceFragment(fr);
                         break;
                     case 2:
-                        fr = new EntryTicketFragment();
+                        fr = new NewEntryTicketFragment();
                         replaceFragment(fr);
                         break;
                     case 3:

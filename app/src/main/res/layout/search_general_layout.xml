@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:background="@android:color/white"
             android:layout_weight="1"
-            android:layout_marginBottom="32dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llBtn"/>
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
@@ -29,14 +29,28 @@
             android:indeterminateDrawable="@drawable/progress"
             android:layout_centerHorizontal="true"
             android:indeterminate="true"/>
-        <Button
-            android:id="@+id/btnSave"
+
+        <LinearLayout
+            android:id="@+id/llBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone"
+            android:layout_height="@dimen/_50sdp"
             android:layout_alignParentBottom="true"
-            android:text="Save" />
+            android:background="#e0e0e0">
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_button"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
     </RelativeLayout>
 
 
