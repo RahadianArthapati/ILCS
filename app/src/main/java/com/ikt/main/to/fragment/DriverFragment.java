@@ -100,6 +100,8 @@ public class DriverFragment extends Fragment implements View.OnClickListener, Ta
                 DriverObject driver = arrDriver.get(i);
                 drivers.add(driver);
             }
+        } else {
+            getDrivers();
         }
         adapter = new DriverAdapter(getActivity(), drivers, this);
         listView.setAdapter(adapter);
