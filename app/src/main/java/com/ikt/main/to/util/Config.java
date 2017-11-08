@@ -33,7 +33,7 @@ public class Config {
 	public static String URL_ADD_DRIVER = URL_REFERENCE+"AddDriver";
     public static String URL_EDIT_DRIVER = URL_REFERENCE+"EditDriver";
     public static String URL_GET_TICKET = URL_REFERENCE+"GetTicketList";
-    public static String URL_GET_TICKET_DETAIL = URL_REFERENCE+"GetTicket";
+    public static String URL_GET_TICKET_DETAIL = URL_REFERENCE+"GetTicket2";
     public static String URL_GET_STATUS = URL_REFERENCE+"GetStatus";
     public static String URL_GET_TRUCK_ACTIVITIES = URL_REFERENCE+"GetActivityList";
     public static String URL_GET_ACTIVITIES = URL_REFERENCE+"GetActivity";
@@ -54,6 +54,7 @@ public class Config {
     public static String URL_CHECK_VIN_SCAN = URL_CARTOS + "checkVinScanned";
     public static String URL_GET_SLOT = URL_CARTOS + "BookSlotOption";
     public static String URL_ANNOUNCE_VIN = URL_CARTOS + "AnnounceVin";
+    public static String URL_DELETE_VISIT = URL_CARTOS + "VisitEdit/delete";
 
 
 

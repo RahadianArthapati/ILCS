@@ -210,6 +210,11 @@ public class TruckAcitivitiesFragment extends Fragment implements IHttpResponse,
                                     arrFilter.add(to);
                                 }
                             }
+                            for (TruckActivitiesObject to : arrDatas) {
+                                if (to.getDriver().toUpperCase().contains(query)) {
+                                    arrFilter.add(to);
+                                }
+                            }
                             data.clear();
                             data.addAll(arrFilter);
                         } else {

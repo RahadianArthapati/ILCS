@@ -85,7 +85,8 @@ public class SearchDriverActivity extends BaseActivity2 implements TapView, Sear
         adapter = new DriverAdapter(this, drivers, this);
         listView.setAdapter(adapter);
         btnAddDriver.setOnClickListener(this);
-        showDriver();
+//        showDriver();
+        getDrivers();
     }
 
     private void showDriver(){

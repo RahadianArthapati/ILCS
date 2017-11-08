@@ -94,7 +94,7 @@ public class DriverFragment extends Fragment implements View.OnClickListener, Ta
         btnAddDriver.setOnClickListener(this);
         drivers = new ArrayList<DriverObject>();
         int count = dbHelper.getDriverCount();
-        if (count > 0) {
+        /*if (count > 0) {
             List<DriverObject> arrDriver = dbHelper.getAllDriver();
             for (int i = 0; i < arrDriver.size(); i++) {
                 DriverObject driver = arrDriver.get(i);
@@ -102,7 +102,8 @@ public class DriverFragment extends Fragment implements View.OnClickListener, Ta
             }
         } else {
             getDrivers();
-        }
+        }*/
+        getDrivers();
         adapter = new DriverAdapter(getActivity(), drivers, this);
         listView.setAdapter(adapter);
 

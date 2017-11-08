@@ -222,6 +222,16 @@ public class NewEntryTicketFragment extends Fragment implements TapView, IHttpRe
                                     arrFilter.add(to);
                                 }
                             }
+                            for (TicketObject to : arrDatas) {
+                                if (to.getPlatNo().contains(query)) {
+                                    arrFilter.add(to);
+                                }
+                            }
+                            for (TicketObject to : arrDatas) {
+                                if (to.getDriverName().toUpperCase().contains(query)) {
+                                    arrFilter.add(to);
+                                }
+                            }
                             data.clear();
                             data.addAll(arrFilter);
                         } else {

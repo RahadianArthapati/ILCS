@@ -82,7 +82,8 @@ public class SearchTruckActivity extends BaseActivity2 implements SearchView.OnQ
         adapter = new SearchTruckAdapter(this, trucks,this);
 
         // Satrio
-        showTrucks();
+//        showTrucks();
+        getTrucks();
     }
 
     private void show(){

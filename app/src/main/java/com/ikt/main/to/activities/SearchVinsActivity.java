@@ -80,7 +80,7 @@ public class SearchVinsActivity extends BaseActivity2 implements IHttpResponse, 
 
     @Override
     public boolean isAvailableSearchBtn() {
-        return false;
+        return true;
     }
 
     @Override

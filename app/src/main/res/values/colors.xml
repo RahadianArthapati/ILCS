@@ -36,6 +36,8 @@
 
     <color name="blackButton">#222222</color>
     <color name="orangeButton">#ff6f00</color>
+    <color name="orangeButtonAccent">#ffa040</color>
+
 
 
     <!--reds-->

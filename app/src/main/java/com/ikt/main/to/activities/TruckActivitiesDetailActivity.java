@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ikt.main.to.adapter.NewTruckActivitiesDetailAdapter;
 import com.ikt.main.to.model.VectorModel;
 import com.ikt.main.to.R;
 import com.ikt.main.to.adapter.TruckActivitiesDetailAdapter;
@@ -73,7 +74,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
     private String mDesc = "";
     ArrayList<TruckActivitiesDetailObject> data;
     private String mDriver;
-    private TruckActivitiesDetailAdapter mAdapter;
+    private NewTruckActivitiesDetailAdapter mAdapter;
     private int pos = -1;
 
     @Nullable
@@ -113,7 +114,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
         listTruckActivities.setLayoutManager(layoutManager);
 
         data = new ArrayList<TruckActivitiesDetailObject>();
-        mAdapter = new TruckActivitiesDetailAdapter(this, data);
+        mAdapter = new NewTruckActivitiesDetailAdapter(this, data);
         mAdapter.setListener(this);
         listTruckActivities.setAdapter(mAdapter);
 
@@ -196,7 +197,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
 
     @Override
     public void setAction(int type, int position, String name) {
-        if (type==1) {
+        /*if (type==1) {
             // show popup
             TruckActivitiesDetailObject obj = (TruckActivitiesDetailObject) data.get(position);
             // custom dialog
@@ -234,7 +235,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
             });
 
             dialog.show();
-        }
+        }*/
     }
 
     @Override

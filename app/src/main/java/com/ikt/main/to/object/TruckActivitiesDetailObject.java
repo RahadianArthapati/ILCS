@@ -64,6 +64,18 @@ public class TruckActivitiesDetailObject implements Serializable{
         isShowDate = showDate;
     }
 
+    private String isShowTruck;
+    public String getIsShowTruck() { return isShowTruck; }
+    public void setIsShowTruck(String showTruck) {
+        isShowTruck = showTruck;
+    }
+
+    private String isShowDriver;
+    public String getIsShowDriver() { return isShowDriver; }
+    public void setIsShowDriver(String showDriver) {
+        isShowDriver = showDriver;
+    }
+
     private String isShowStatus;
     public String getIsShowStatus() { return isShowStatus; }
     public void setIsShowStatus(String showStatus) {
