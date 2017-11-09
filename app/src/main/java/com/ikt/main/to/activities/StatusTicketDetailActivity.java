@@ -113,6 +113,8 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
     Button buttonDelete;
     @Bind(R.id.buttonDummy)
     Button buttonDummy;
+    @Bind(R.id.buttonDummy2)
+    Button buttonDummy2;
     @Bind(R.id.text_phone)
     TextView text_phone;
     @Bind(R.id.trPhone)
@@ -209,6 +211,21 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
         HttpManager.getInstance().doRequest(task);
     }
 
+    private void assignDriver(String driverId) {
+        HttpTask task = new HttpTask(this, Config.URL_ASSIGN_DRIVER, 1001, Config.POST, this, AssignDriverParser.class);
+        task.setProcessName(getString(R.string.loading_load));
+        List<NameValuePair> post = new ArrayList<NameValuePair>();
+        post.add(new BasicNameValuePair("user_id", userId));
+        post.add(new BasicNameValuePair("session_id", session));
+        post.add(new BasicNameValuePair("driver_id", driverId));
+        post.add(new BasicNameValuePair("visit_id", visitId));
+
+        task.setPostData(post);
+        task.setEnabledProgressDialog(true);
+        task.setCancelableProgressDialog(true);
+        HttpManager.getInstance().doRequest(task);
+    }
+
     private void setToolBar() {
         setSupportActionBar(toolbar);
 
@@ -293,26 +310,25 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
 //                    mObjectDetail.setEditable(true);
 //                    mObjectDetail.setDeletable(true);
 //                    mObjectDetail.setNeed_assign(true);
+                    ViewGroup.LayoutParams param = buttonDummy.getLayoutParams();
+                    ViewGroup.LayoutParams param2 = buttonDummy2.getLayoutParams();
                     if (mObjectDetail.isNeed_assign() && mObjectDetail.isDeletable()){
                         buttonAssignNew.setVisibility(View.VISIBLE);
                         buttonDelete.setVisibility(View.VISIBLE);
-                        ViewGroup.LayoutParams param = buttonDummy.getLayoutParams();
                         buttonAssignNew.setLayoutParams(param);
-                        buttonDelete.setLayoutParams(param);
+                        buttonDelete.setLayoutParams(param2);
                     }
                     if (mObjectDetail.isNeed_assign() && mObjectDetail.isEditable()){
                         buttonAssignNew.setVisibility(View.VISIBLE);
                         buttonEdit.setVisibility(View.VISIBLE);
-                        ViewGroup.LayoutParams param = buttonDummy.getLayoutParams();
                         buttonEdit.setLayoutParams(param);
                         buttonAssignNew.setLayoutParams(param);
                     }
                     if (mObjectDetail.isEditable() && mObjectDetail.isDeletable()){
                         buttonEdit.setVisibility(View.VISIBLE);
                         buttonDelete.setVisibility(View.VISIBLE);
-                        ViewGroup.LayoutParams param = buttonDummy.getLayoutParams();
                         buttonEdit.setLayoutParams(param);
-                        buttonDelete.setLayoutParams(param);
+                        buttonDelete.setLayoutParams(param2);
                     }
                     if (mObjectDetail.isNeed_assign()){
                         buttonAssignNew.setVisibility(View.VISIBLE);
@@ -455,21 +471,6 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
             String driverId = driver.getDriverId();
             assignDriver(driverId);
         }
-    }
-
-    private void assignDriver(String driverId) {
-        HttpTask task = new HttpTask(this, Config.URL_ASSIGN_DRIVER, 1001, Config.POST, this, AssignDriverParser.class);
-        task.setProcessName(getString(R.string.loading_load));
-        List<NameValuePair> post = new ArrayList<NameValuePair>();
-        post.add(new BasicNameValuePair("user_id", userId));
-        post.add(new BasicNameValuePair("session_id", session));
-        post.add(new BasicNameValuePair("driver_id", driverId));
-        post.add(new BasicNameValuePair("visit_id", visitId));
-
-        task.setPostData(post);
-        task.setEnabledProgressDialog(true);
-        task.setCancelableProgressDialog(true);
-        HttpManager.getInstance().doRequest(task);
     }
 
     @Override

@@ -203,24 +203,22 @@
                 </LinearLayout>
                 <Button
                     android:id="@+id/btnVinIncoming"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="80dp"
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:background="@drawable/rounded_button_dark"
                     android:onClick="onClick"
                     android:text="Edit VIN Incoming"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
-                    android:visibility="gone"/>
+                    android:visibility="visible"/>
 
                 <Button
                     android:id="@+id/btnVinOrTripOutgoing"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="80dp"
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:background="@drawable/rounded_button_dark"
                     android:onClick="onClick"
@@ -228,7 +226,7 @@
                     android:layout_marginBottom="@dimen/activity_vertical_margin"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
-                    android:visibility="gone"/>
+                    android:visibility="visible"/>
                 <!--<Button
                     android:id="@+id/btnSaveAndNext"
                     android:layout_width="match_parent"
@@ -255,11 +253,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp">
+                android:gravity="center">
 
                 <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:textAllCaps="false"
+                    android:text="Save"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_button"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnSaveAndNext"
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:textAllCaps="false"
+                    android:text="Save &amp; Continue"
+                    android:background="@drawable/rounded_button"
+                    android:textColor="@android:color/white"/>
+
+                <!--<Button
                     android:id="@+id/btnSave"
                     android:layout_width="100dp"
                     android:layout_height="35dp"
@@ -272,9 +287,9 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/rounded_button"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white" />-->
 
-                <Button
+                <!--<Button
                     android:id="@+id/btnSaveAndNext"
                     android:layout_width="100dp"
                     android:layout_height="35dp"
@@ -286,7 +301,7 @@
                     android:text="Save &amp; Continue"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/rounded_button"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white" />-->
             </LinearLayout>
         </LinearLayout>
 

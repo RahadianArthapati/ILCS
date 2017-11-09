@@ -526,8 +526,15 @@
                         android:layout_width="100dp"
                         android:layout_height="35dp"
                         android:textAllCaps="false"
-                        android:text="Assign"
                         android:layout_marginRight="10dp"
+                        android:background="@drawable/rounded_button"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"/>
+                    <Button
+                        android:id="@+id/buttonDummy2"
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:textAllCaps="false"
                         android:background="@drawable/rounded_button"
                         android:textColor="@android:color/white"
                         android:visibility="gone"/>
