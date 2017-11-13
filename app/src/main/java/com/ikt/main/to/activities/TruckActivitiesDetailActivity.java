@@ -129,7 +129,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
         post.add(new BasicNameValuePair(Config.KEY_ORG_ID, orgId));
         post.add(new BasicNameValuePair(Config.KEY_SESSION, session));
         post.add(new BasicNameValuePair(Config.KEY_USER_ID, userId));
-        post.add(new BasicNameValuePair(Config.KEY_VISIT_ID, visitId));
+//        post.add(new BasicNameValuePair(Config.KEY_VISIT_ID, visitId));
         post.add(new BasicNameValuePair(Config.TRUCK, mTruckNo));
 //        //hardcode
 //        post.add(new BasicNameValuePair(Config.KEY_ORG_ID, "3959341771344691265"));

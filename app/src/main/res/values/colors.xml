@@ -39,6 +39,10 @@
     <color name="orangeButtonAccent">#ffa040</color>
 
 
+    <color name="login_shade_top">#59039BE5</color>
+    <color name="login_shade_bottom">#5901579B</color>
+
+
 
     <!--reds-->
     <color name="red_50">#FFEBEE</color>

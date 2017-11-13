@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gcm.GCMRegistrar;
@@ -48,6 +49,8 @@ public class LoginActivity extends Activity implements View.OnClickListener, IHt
     MaterialEditText edtPassword;
     @Bind(R.id.btnLogin)
     Button btnLogin;
+    @Bind(R.id.llLogin)
+    LinearLayout llLogin;
 
     private IKTApplication aController;
     // Asyntask
@@ -71,10 +74,12 @@ public class LoginActivity extends Activity implements View.OnClickListener, IHt
     @Override
     public void onClick(View v) {
         if (v == btnLogin) {
+            llLogin.setVisibility(View.GONE);
             String username = edtUsername.getText().toString();
             String pwd = edtPassword.getText().toString();
 
             if (username.isEmpty() || pwd.isEmpty()) {
+                llLogin.setVisibility(View.VISIBLE);
                 Utility.validateEditText(edtUsername, getResources().getString(R.string.mandatory));
                 Utility.validateEditText(edtPassword, getResources().getString(R.string.mandatory));
             } else {
@@ -203,6 +208,7 @@ public class LoginActivity extends Activity implements View.OnClickListener, IHt
         IParser parser = (IParser) result;
         if (parser.isError()) {
             Toast.makeText(this, parser.getErrorMessage(), Toast.LENGTH_SHORT).show();
+            llLogin.setVisibility(View.VISIBLE);
         }
     }
 

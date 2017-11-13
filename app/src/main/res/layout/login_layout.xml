@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/bg_splash"
     android:orientation="vertical">
 
     <ImageView
@@ -14,58 +14,67 @@
         android:src="@drawable/ikt_logo_putih" />
 
     <LinearLayout
+        android:id="@+id/llLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
         android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_button_white"
         android:orientation="vertical">
 
-        <com.ikt.main.to.component.MaterialEditText
-            android:id="@+id/edtUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:hint="@string/username"
-            android:inputType="text"
-            android:maxLength="20"
-            android:textColor="@android:color/white"
-            android:textCursorDrawable="@drawable/text_cursor"
-            app:met_baseColor="@android:color/white"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true" />
-
-        <com.ikt.main.to.component.MaterialEditText
-            android:id="@+id/edtPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:maxLength="20"
-            android:textColor="@android:color/white"
-            android:textCursorDrawable="@drawable/text_cursor"
-            app:met_baseColor="@android:color/white"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true" />
-
-
-
-            <Button
-                android:id="@+id/btnLogin"
+            <com.ikt.main.to.component.MaterialEditText
+                android:id="@+id/edtUsername"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/rounded_button"
-                android:text="@string/login"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="@string/username"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textCursorDrawable="@drawable/text_cursor"
+                app:met_baseColor="#000000"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="#000000"
+                app:met_singleLineEllipsis="true"
+                app:met_textColorHint="#000000"/>
 
+            <com.ikt.main.to.component.MaterialEditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:gravity="center"
+                android:textCursorDrawable="@drawable/text_cursor"
+                android:textColor="#000000"
+                app:met_baseColor="#000000"
+                app:met_primaryColor="#000000"
+                app:met_textColorHint="#000000"
+                app:met_floatingLabel="highlight"
+                app:met_singleLineEllipsis="true"/>
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_button"
+                    android:text="@string/login"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
