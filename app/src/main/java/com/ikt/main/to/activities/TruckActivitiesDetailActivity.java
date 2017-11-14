@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ikt.main.to.adapter.New2TruckActivitiesDetailAdapter;
 import com.ikt.main.to.adapter.NewTruckActivitiesDetailAdapter;
 import com.ikt.main.to.model.VectorModel;
 import com.ikt.main.to.R;
@@ -74,7 +75,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
     private String mDesc = "";
     ArrayList<TruckActivitiesDetailObject> data;
     private String mDriver;
-    private NewTruckActivitiesDetailAdapter mAdapter;
+    private New2TruckActivitiesDetailAdapter mAdapter;
     private int pos = -1;
 
     @Nullable
@@ -114,7 +115,7 @@ public class TruckActivitiesDetailActivity extends BaseActivity2 implements TapV
         listTruckActivities.setLayoutManager(layoutManager);
 
         data = new ArrayList<TruckActivitiesDetailObject>();
-        mAdapter = new NewTruckActivitiesDetailAdapter(this, data);
+        mAdapter = new New2TruckActivitiesDetailAdapter(this, data);
         mAdapter.setListener(this);
         listTruckActivities.setAdapter(mAdapter);
 

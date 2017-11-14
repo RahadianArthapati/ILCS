@@ -5,40 +5,45 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <TextView
         android:id="@+id/txtBody"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp">
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_20sdp">
 
         <Button
             android:id="@+id/btnNo"
-            android:layout_width="60dp"
+            android:layout_width="100dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_20sdp"
             android:background="@drawable/rounded_button"
             android:text="No"
             android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnYes"
-            android:layout_width="60dp"
+            android:layout_width="100dp"
             android:layout_height="35dp"
             android:layout_gravity="right"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
             android:background="@drawable/rounded_button"
             android:text="Yes"
             android:textColor="@android:color/white" />

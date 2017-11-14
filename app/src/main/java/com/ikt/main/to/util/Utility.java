@@ -65,15 +65,17 @@ public class Utility {
     public static void createDialogLogout(final Context context, String message) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View dialogLayout = inflater.inflate(R.layout.dialog_layout, null);
+        TextView txtTitle = (TextView) dialogLayout.findViewById(R.id.txtTitle);
         TextView txtBody = (TextView) dialogLayout.findViewById(R.id.txtBody);
         Button btnYes = (Button) dialogLayout.findViewById(R.id.btnYes);
         Button btnNo = (Button) dialogLayout.findViewById(R.id.btnNo);
 
         txtBody.setText(message);
+        txtTitle.setText("Logout");
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Logout");
+//        builder.setTitle("Logout");
         builder.setView(dialogLayout);
         final AlertDialog dialog = builder.create();
         btnYes.setOnClickListener(new View.OnClickListener() {
@@ -149,92 +151,79 @@ public class Utility {
     }
 
     public static void createDialogDeleteDriver(final Context context, String message, final int index, final TapView tapView) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Delete");
-        builder.setMessage(message);
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                tapView.setAction(999, index, "delete");
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-        Button negative = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-        if (negative != null) {
-            negative.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button_dark));
-
-            negative.setTextColor(context.getResources()
-                    .getColor(android.R.color.white));
-        }
-        Button positive = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-        if (positive != null) {
-            positive.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button_dark));
-
-            positive.setTextColor(context.getResources()
-                    .getColor(android.R.color.white));
-        }
-    }
-
-    public static void createDialogUpdate(final Context context,String title, String message, final int index, final TapView tapView) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                tapView.setAction(99, index, "update yes");
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                tapView.setAction(98, index, "update no");
-                dialog.dismiss();
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-        Button negative = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-        if (negative != null) {
-            negative.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button_dark));
-
-            negative.setTextColor(context.getResources()
-                    .getColor(android.R.color.white));
-        }
-        Button positive = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-        if (positive != null) {
-            positive.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button_dark));
-
-            positive.setTextColor(context.getResources()
-                    .getColor(android.R.color.white));
-        }
-    }
-
-    public static void createDialogAnnounceVin(final Context context, String title, String message, final String vin, final TapView tapView) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View dialogLayout = inflater.inflate(R.layout.dialog_layout, null);
+        TextView txtTitle = (TextView) dialogLayout.findViewById(R.id.txtTitle);
         TextView txtBody = (TextView) dialogLayout.findViewById(R.id.txtBody);
         Button btnYes = (Button) dialogLayout.findViewById(R.id.btnYes);
         Button btnNo = (Button) dialogLayout.findViewById(R.id.btnNo);
 
         txtBody.setText(message);
+        txtTitle.setText("Delete");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setView(dialogLayout);
+
+        final AlertDialog dialog = builder.create();
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tapView.setAction(999, index, "delete");
+            }
+        });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
+    public static void createDialogUpdate(final Context context,String title, String message, final int index, final TapView tapView) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View dialogLayout = inflater.inflate(R.layout.dialog_layout, null);
+        TextView txtTitle = (TextView) dialogLayout.findViewById(R.id.txtTitle);
+        TextView txtBody = (TextView) dialogLayout.findViewById(R.id.txtBody);
+        Button btnYes = (Button) dialogLayout.findViewById(R.id.btnYes);
+        Button btnNo = (Button) dialogLayout.findViewById(R.id.btnNo);
+
+        txtBody.setText(message);
+        txtTitle.setText(title);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setView(dialogLayout);
+
+        final AlertDialog dialog = builder.create();
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tapView.setAction(99, index, "update yes");
+            }
+        });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tapView.setAction(98, index, "update no");
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
+    public static void createDialogAnnounceVin(final Context context, String title, String message, final String vin, final TapView tapView) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View dialogLayout = inflater.inflate(R.layout.dialog_layout, null);
+        TextView txtTitle = (TextView) dialogLayout.findViewById(R.id.txtTitle);
+        TextView txtBody = (TextView) dialogLayout.findViewById(R.id.txtBody);
+        Button btnYes = (Button) dialogLayout.findViewById(R.id.btnYes);
+        Button btnNo = (Button) dialogLayout.findViewById(R.id.btnNo);
+
+        txtBody.setText(message);
+        txtTitle.setText(title);
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(title);
         builder.setView(dialogLayout);
         final AlertDialog dialog = builder.create();
         btnYes.setOnClickListener(new View.OnClickListener() {
@@ -315,7 +304,7 @@ public class Utility {
         Button neutral_button = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
         if (neutral_button != null) {
             neutral_button.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button_dark));
+                    .getDrawable(R.drawable.rounded_button));
 
             neutral_button.setTextColor(context.getResources()
                     .getColor(android.R.color.white));
@@ -340,7 +329,7 @@ public class Utility {
         Button neutral_button = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
         if (neutral_button != null) {
             neutral_button.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button_dark));
+                    .getDrawable(R.drawable.rounded_button));
 
             neutral_button.setTextColor(context.getResources()
                     .getColor(android.R.color.white));

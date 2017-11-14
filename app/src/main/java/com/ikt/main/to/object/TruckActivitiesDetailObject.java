@@ -17,7 +17,18 @@ public class TruckActivitiesDetailObject implements Serializable{
 //http://103.19.81.26:5180/check/index.php/api/GetActivity
 //{"VISIT_ID":"TRK31602018784325625","DRIVER":"ervv","TRUCK_CODE":"B9003WV","EXP_VINS_LOADING":"0","OUTGOING_VOYAGE_NR":null,"OUTGOING_VESSEL":null,"EXP_VINS_UNLOADING":"12","TIME_BEGIN":"31-MAR-2016 06:00","TIME_END":"31-MAR-2016 11:00","LOADAREA_IN":"ED003","LOADAREA_OUT":null,"ANNOUNCE":"30-MAR-2016 23:30","OPERATION":null,"COMPLETE":null,"LEFT":null}
 
+    // baru
+//                "VISIT_ID":"TRK397690616244196",
+//                "DRIVER":"Damar",
+//                "TIME":null,
+//                "STATUS":"Gate OUT",
+//                "TYPE":"OUTGOING",
+//                "ICON":"3"
 
+    private String time;
+    private String status;
+    private String type;
+    private String icon;
     private String visitId;
     private String driverId;
     private String driver;
@@ -288,5 +299,37 @@ public class TruckActivitiesDetailObject implements Serializable{
 
     public void setCreated_by(java.lang.String created_by) {
         this.created_by = created_by;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

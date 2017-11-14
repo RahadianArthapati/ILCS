@@ -61,6 +61,32 @@ public class TruckActivitiesDetailParser extends DefaultErrorModel implements IP
 //        "LEFT": null,
 //        "LATEST_VISIT_STATUS": "ANNOUNCED",
 //        "LAST_CHANGE": "22-MAR-16 01.46.10.000000 PM"
+
+        // last
+//                "VISIT_ID":"TRK7354648124265997",
+//                "DRIVER":null,
+//                "TRUCK_CODE":"B9005WV",
+//                "EXP_VINS_LOADING":"0",
+//                "OUTGOING_VOYAGE_NR":null,
+//                "OUTGOING_VESSEL":null,
+//                "EXP_VINS_UNLOADING":"7",
+//                "TIME_BEGIN":"14-MAR-2016 19:00",
+//                "TIME_END":"15-MAR-2016 03:00",
+//                "LOADAREA_IN":"-",
+//                "LOADAREA_OUT":"-",
+//                "ANNOUNCE":null,
+//                "OPERATION":null,
+//                "COMPLETE":null,
+//                "LEFT":null,
+//                "CREATED_BY":null
+
+        // baru
+//                "VISIT_ID":"TRK397690616244196",
+//                "DRIVER":"Damar",
+//                "TIME":null,
+//                "STATUS":"Gate OUT",
+//                "TYPE":"OUTGOING",
+//                "ICON":"3"
         try {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray arrData =  jsonObject.optJSONArray("data");
@@ -71,6 +97,11 @@ public class TruckActivitiesDetailParser extends DefaultErrorModel implements IP
                     TruckActivitiesDetailObject activitiesDetailObject = new TruckActivitiesDetailObject();
                     activitiesDetailObject.setVisitId(objData.optString("VISIT_ID"));
                     activitiesDetailObject.setDriver(objData.optString("DRIVER"));
+                    activitiesDetailObject.setTime(objData.optString("TIME"));
+                    activitiesDetailObject.setStatus(objData.optString("STATUS"));
+                    activitiesDetailObject.setType(objData.optString("TYPE"));
+                    activitiesDetailObject.setIcon(objData.optString("ICON"));
+
                     activitiesDetailObject.setTruckCode(objData.optString("TRUCK_CODE"));
                     activitiesDetailObject.setExp_vins_loading(objData.optString("EXP_VINS_LOADING"));
                     activitiesDetailObject.setOutgoing_voyage_nr(objData.optString("OUTGOING_VOYAGE_NR"));
