@@ -38,7 +38,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:paddingBottom="10dp"
                 android:visibility="visible">
 
                 <TableRow
@@ -288,6 +287,7 @@
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/trLanesIn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_column="3">
@@ -306,6 +306,33 @@
 
                     <TextView
                         android:id="@+id/text_load_lanes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:text=""
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trLanesOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_load_lanes_out"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="@string/label_colon" />
+
+                    <TextView
+                        android:id="@+id/text_load_lanes_out"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="2"
@@ -368,7 +395,6 @@
                     android:id="@+id/view_car_vessel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     android:paddingLeft="20dp"
                     android:visibility="gone"
@@ -441,7 +467,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"

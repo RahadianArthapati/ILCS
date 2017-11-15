@@ -78,7 +78,7 @@
     <string name="left">Left</string>
     <string name="label_plat_no">License No</string>
     <string name="license_no">License Number</string>
-    <string name="label_license_plat">License Plat</string>
+    <string name="label_license_plat">License Plate</string>
     <string name="loading_load">Loading…</string>
     <string name="label_load_lanes">Load Lanes In</string>
     <string name="login">LOGIN</string>

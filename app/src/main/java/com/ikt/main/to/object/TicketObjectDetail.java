@@ -33,6 +33,7 @@ public class TicketObjectDetail {
 //                        "AMOUNT_CAR_VESSEL":"0",
 //                        "INFO":"Truk sudah Gate In di Terminal IKT pada 01-NOV-2017 14:36", x
 //                        "DELETABLE":false, x
+//                        "EDITABLE":true,
 //                        "NEED_ASSIGN":false x
 //                        "PHONE":"123123123"
 
@@ -52,7 +53,6 @@ public class TicketObjectDetail {
     private boolean deletable;
     private boolean need_assign;
     private String phone;
-    //belum ada api nya
     private boolean editable;
 
     public String getCarrier() {

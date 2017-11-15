@@ -154,7 +154,7 @@ public class SplashActivity extends Activity implements IHttpResponse, TapView {
     public void onFailed(Context context, int pid, Object result) {
         IParser parser = (IParser) result;
         //Toast.makeText(this,parser.getErrorMessage(),Toast.LENGTH_SHORT).show();
-        Utility.createDialogInfo(this,parser.getErrorMessage(),this);
+        Utility.createCustomDialogInfo(this,parser.getErrorMessage(),this);
     }
 
     @Override

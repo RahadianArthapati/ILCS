@@ -82,8 +82,10 @@ public class NewTicketObjectDetailParser extends DefaultErrorModel implements IP
 //                        "AMOUNT_CAR_VESSEL":"0",
 //                        "INFO":"Truk sudah Gate In di Terminal IKT pada 01-NOV-2017 14:36", x
 //                        "DELETABLE":false, x
+//                        "EDITABLE":true,
 //                        "NEED_ASSIGN":false x
 //                        "PHONE":"123123123"
+
             JSONObject jsonObject = new JSONObject(json);
             JSONObject object = jsonObject.optJSONObject("data");
             if(object != null){
@@ -103,6 +105,7 @@ public class NewTicketObjectDetailParser extends DefaultErrorModel implements IP
                     objectDetail.setLicenseplate(object.optString("LICENSEPLATE"));
                     objectDetail.setInfo(object.optString("INFO"));
                     objectDetail.setNeed_assign(object.optBoolean("NEED_ASSIGN"));
+                    objectDetail.setEditable(object.optBoolean("EDITABLE"));
                     objectDetail.setDeletable(object.optBoolean("DELETABLE"));
                     objectDetail.setPhone(object.optString("PHONE"));
                 VectorModel.getInstance().setTicketObjectDetails(objectDetail);

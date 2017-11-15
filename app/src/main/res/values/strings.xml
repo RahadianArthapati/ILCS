@@ -142,7 +142,7 @@
     <string name="label_carrier">Carrier</string>
     <string name="label_transport_mode">Transport Mode</string>
     <string name="label_driver">Driver</string>
-    <string name="label_license_plat">License Plat</string>
+    <string name="label_license_plat">License Plate</string>
     <string name="label_type">Type</string>
     <string name="label_outgoing_voy_nr">Outgoing Voy Nr</string>
     <string name="label_outgoing_vessel">Outgoing Vessel</string>

@@ -83,6 +83,8 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
     TextView text_time_end;
     @Bind(R.id.text_load_lanes)
     TextView text_load_lanes;
+    @Bind(R.id.text_load_lanes_out)
+    TextView text_load_lanes_out;
     @Bind(R.id.spinnerNumberPickupCar)
     Spinner spinnerNumberPickupCar;
     @Bind(R.id.imageViewBarcode)
@@ -119,6 +121,10 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
     TextView text_phone;
     @Bind(R.id.trPhone)
     TableRow trPhone;
+    @Bind(R.id.trLanesIn)
+    TableRow trLanesIn;
+    @Bind(R.id.trLanesOut)
+    TableRow trLanesOut;
 
     private ActionBar mActionBar;
     private String visitId;
@@ -281,21 +287,28 @@ public class StatusTicketDetailActivity extends BaseActivity2 implements IHttpRe
                     mObjectDetail = ticketDetailsArr.get(0);
                     text_carrier.setText(mObjectDetail.getCarrier());
                     text_transport_mode.setText("Truck"); //?? truck
-                    text_driver.setText(mObjectDetail.getDriverName().equalsIgnoreCase("null") ? "-" : mObjectDetail.getDriverName()+" "+mObjectDetail.getPhone());
+                    text_driver.setText(mObjectDetail.getDriverName().equalsIgnoreCase("null") ? "-" : mObjectDetail.getDriverName()/*+" "+mObjectDetail.getPhone()*/);
                     text_type.setText("Backload");
                     text_outgoing_voy_nr.setText(mObjectDetail.getOutGoingVoyage().equalsIgnoreCase("null") ? "-" : mObjectDetail.getOutGoingVoyage());
                     text_outgoing_vessel.setText(mObjectDetail.getOutGoingVessel().equalsIgnoreCase("null") ? "-" : mObjectDetail.getOutGoingVessel());
                     text_time_begin.setText(mObjectDetail.getBegin());
                     text_time_end.setText(mObjectDetail.getEnd());
-                    text_load_lanes.setText(mObjectDetail.getAreaOut().equalsIgnoreCase("null") ? "-" : mObjectDetail.getAreaOut());
                     imageViewBarcode.setDrawingCacheEnabled(true);
                     Bitmap bitmap = Utility.generateBarCode(visitId, imageViewBarcode.getDrawingCache(), smallerDimension);
                     imageViewBarcode.setImageBitmap(bitmap);
                     txtVisitId.setText(visitId);
                     // Satrio
-//                    mObjectDetail.setPhone("08999106544");
+                    if (null == mObjectDetail.getAreaIn() || mObjectDetail.getAreaIn().equalsIgnoreCase("null")) {
+                        trLanesIn.setVisibility(View.GONE);
+                    } else {
+                        text_load_lanes.setText(mObjectDetail.getAreaIn());
+                    }
+                    if (null == mObjectDetail.getAreaOut() || mObjectDetail.getAreaOut().equalsIgnoreCase("null")) {
+                        trLanesOut.setVisibility(View.GONE);
+                    } else {
+                        text_load_lanes_out.setText(mObjectDetail.getAreaOut());
+                    }
                     text_phone.setText(mObjectDetail.getPhone());
-                    Log.d("getPhone: ",mObjectDetail.getPhone());
                     if (mObjectDetail.getPhone().equalsIgnoreCase("null") || null == mObjectDetail.getPhone() || mObjectDetail.getPhone().length() == 0) {
                         trPhone.setVisibility(View.GONE);
                     } else {

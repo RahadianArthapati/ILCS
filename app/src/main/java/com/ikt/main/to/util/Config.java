@@ -11,59 +11,53 @@ public class Config {
     public static final int DOWNLOAD = 4;
     public static final String CLIENT_ID = "948460267388";
     public static final String CLIENT_SECRET_GCM = "dokupass";
-//    public static final String URL = "http://103.19.81.26:5180/cartos_api/index.php/";
 
-    public static String getUrlCartos(String url) {
-        return BuildConfig.ENDPOINT_CARTOS + url;
-    }
-
-    public static String getUrlReference(String url) {
-        return BuildConfig.ENDPOINT_REFERENCE + url;
+    public static String getUrlCartrust(String url) {
+        return BuildConfig.ENDPOINT_CARTRUST + url;
     }
 
     public static String getVersion(){
         return BuildConfig.VERSION_NAME;
     }
 
-    public static String URL_CARTOS = getUrlCartos("");
-    public static String URL_REFERENCE = getUrlReference("");
-    public static String URL_LOGIN = URL_REFERENCE + "login/login";
-    public static String URL_DRIVER = URL_REFERENCE + "Driver/driver";
-    public static String URL_DELETE_DRIVER = URL_REFERENCE + "DeleteDriver";
-	public static String URL_ADD_DRIVER = URL_REFERENCE+"AddDriver";
-    public static String URL_EDIT_DRIVER = URL_REFERENCE+"EditDriver";
-    public static String URL_GET_TICKET = URL_REFERENCE+"GetTicketList";
-    public static String URL_GET_TICKET_DETAIL = URL_REFERENCE+"GetTicket";
-    public static String URL_GET_STATUS = URL_REFERENCE+"GetStatus";
-    public static String URL_GET_TRUCK_ACTIVITIES = URL_REFERENCE+"GetActivityList";
-    public static String URL_GET_ACTIVITIES = URL_REFERENCE+"GetActivity";
-    public static String URL_ASSIGN_DRIVER = URL_REFERENCE+"AssignDriver";
-    public static String URL_CHANGE_PASSWORD = URL_REFERENCE + "ChangePassword";
-    public static String URL_GCM = URL_REFERENCE+"Gcm/gcm";
-    public static String URL_GCM_MSG_DETAIL = URL_REFERENCE+"GetMessageDetail";
-    public static String URL_EDIT_VISIT_RETRIEVE = URL_CARTOS + "VisitEdit/retrieve";
-    public static String URL_EDIT_VISIT_SAVE = URL_CARTOS + "VisitEdit/edit";
-    public static String URL_EDIT_VIN_OUTGOING = URL_CARTOS + "VisitEdit/getvin";
-    public static String URL_EDIT_TRIP_OUTGOING = URL_CARTOS + "VisitEdit/gettrip";
-    public static String URL_EDIT_SAVE_VIN = URL_CARTOS + "VisitEdit/editvin";
-    public static String URL_EDIT_SAVE_TRIP = URL_CARTOS + "VisitEdit/edittrip";
-    public static String URL_CHECK_VIN = URL_CARTOS + "checkVinStatusAndHold";
-    public static String URL_GET_VINS = URL_CARTOS + "Retrieve/listvin";
-    public static String URL_GET_TRIPS = URL_CARTOS + "Retrieve/cmstrip";
-    public static String URL_CHECK_VERSION = URL_CARTOS + "checkVersion";
-    public static String URL_CHECK_VIN_SCAN = URL_CARTOS + "checkVinScanned";
-    public static String URL_GET_SLOT = URL_CARTOS + "BookSlotOption";
-    public static String URL_ANNOUNCE_VIN = URL_CARTOS + "AnnounceVin";
-    public static String URL_DELETE_VISIT = URL_CARTOS + "VisitEdit/delete";
+    public static String URL_CARTRUST = getUrlCartrust("");
+    public static String URL_LOGIN = URL_CARTRUST + "login/login";
+    public static String URL_DRIVER = URL_CARTRUST + "Driver/driver";
+    public static String URL_DELETE_DRIVER = URL_CARTRUST + "DeleteDriver";
+    public static String URL_ADD_DRIVER = URL_CARTRUST+"AddDriver";
+    public static String URL_EDIT_DRIVER = URL_CARTRUST+"EditDriver";
+    public static String URL_GET_TICKET = URL_CARTRUST+"GetTicketList";
+    public static String URL_GET_TICKET_DETAIL = URL_CARTRUST+"GetTicket";
+    public static String URL_GET_STATUS = URL_CARTRUST+"GetStatus";
+    public static String URL_GET_TRUCK_ACTIVITIES = URL_CARTRUST+"GetActivityList";
+    public static String URL_GET_ACTIVITIES = URL_CARTRUST+"GetActivity";
+    public static String URL_ASSIGN_DRIVER = URL_CARTRUST+"AssignDriver";
+    public static String URL_CHANGE_PASSWORD = URL_CARTRUST + "ChangePassword";
+    public static String URL_GCM = URL_CARTRUST+"Gcm/gcm";
+    public static String URL_GCM_MSG_DETAIL = URL_CARTRUST+"GetMessageDetail";
+    public static String URL_EDIT_VISIT_RETRIEVE = URL_CARTRUST + "VisitEdit/retrieve";
+    public static String URL_EDIT_VISIT_SAVE = URL_CARTRUST + "VisitEdit/edit";
+    public static String URL_EDIT_VIN_OUTGOING = URL_CARTRUST + "VisitEdit/getvin";
+    public static String URL_EDIT_TRIP_OUTGOING = URL_CARTRUST + "VisitEdit/gettrip";
+    public static String URL_EDIT_SAVE_VIN = URL_CARTRUST + "VisitEdit/editvin";
+    public static String URL_EDIT_SAVE_TRIP = URL_CARTRUST + "VisitEdit/edittrip";
+    public static String URL_CHECK_VIN = URL_CARTRUST + "checkVinStatusAndHold";
+    public static String URL_GET_VINS = URL_CARTRUST + "Retrieve/listvin";
+    public static String URL_GET_TRIPS = URL_CARTRUST + "Retrieve/cmstrip";
+    public static String URL_CHECK_VERSION = URL_CARTRUST + "checkVersion";
+    public static String URL_CHECK_VIN_SCAN = URL_CARTRUST + "checkVinScanned";
+    public static String URL_GET_SLOT = URL_CARTRUST + "BookSlotOption";
+    public static String URL_ANNOUNCE_VIN = URL_CARTRUST + "AnnounceVin";
+    public static String URL_DELETE_VISIT = URL_CARTRUST + "VisitEdit/delete";
 
 
 
-    public static String URL_TRUCK = URL_CARTOS + "GetTruck";
-    public static String URL_TIMESLOT_DOMESTIC = URL_CARTOS + "bookSlotDomestic";
-    public static String URL_TIMESLOT_INTERNATIONAL = URL_CARTOS + "bookSlotInternational";
-    public static String URL_INCOMING = URL_CARTOS + "cartosApiIncoming";
-    public static String URL_OUTGOING = URL_CARTOS + "cartosApiOutgoing";
-    public static String URL_BACKLOAD = URL_CARTOS + "cartosApiBackLoad";
+    public static String URL_TRUCK = URL_CARTRUST + "GetTruck";
+    public static String URL_TIMESLOT_DOMESTIC = URL_CARTRUST + "bookSlotDomestic";
+    public static String URL_TIMESLOT_INTERNATIONAL = URL_CARTRUST + "bookSlotInternational";
+    public static String URL_INCOMING = URL_CARTRUST + "cartosApiIncoming";
+    public static String URL_OUTGOING = URL_CARTRUST + "cartosApiOutgoing";
+    public static String URL_BACKLOAD = URL_CARTRUST + "cartosApiBackLoad";
     public static String KEY_NAME = "NAME";
     public static String KEY_ID = "ID";
     public static String KEY_TYPE = "TYPE";

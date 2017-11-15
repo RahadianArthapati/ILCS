@@ -169,6 +169,7 @@ public class Utility {
             @Override
             public void onClick(View view) {
                 tapView.setAction(999, index, "delete");
+                dialog.dismiss();
             }
         });
         btnNo.setOnClickListener(new View.OnClickListener() {
@@ -199,6 +200,7 @@ public class Utility {
             @Override
             public void onClick(View view) {
                 tapView.setAction(99, index, "update yes");
+                dialog.dismiss();
             }
         });
         btnNo.setOnClickListener(new View.OnClickListener() {
@@ -287,53 +289,83 @@ public class Utility {
     }
 
     public static void createDialogInfo(final Context context, String message, final TapView listener) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View dialogLayout = inflater.inflate(R.layout.dialog_layout, null);
+        TextView txtTitle = (TextView) dialogLayout.findViewById(R.id.txtTitle);
+        TextView txtBody = (TextView) dialogLayout.findViewById(R.id.txtBody);
+        Button btnYes = (Button) dialogLayout.findViewById(R.id.btnYes);
+        Button btnNo = (Button) dialogLayout.findViewById(R.id.btnNo);
+        btnNo.setVisibility(View.GONE);
+        btnYes.setText("OK");
+        txtBody.setText(message);
+        txtTitle.setText("Information");
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Information");
-        builder.setMessage(message);
-        builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+        builder.setView(dialogLayout);
+        final AlertDialog dialog = builder.create();
+        btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View view) {
                 listener.setAction(0, 0, "info");
                 dialog.dismiss();
             }
         });
-
-        AlertDialog dialog = builder.create();
         dialog.show();
+    }
 
-        Button neutral_button = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-        if (neutral_button != null) {
-            neutral_button.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button));
+    public static void createCustomDialogInfo(final Context context, String message, final TapView listener) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View dialogLayout = inflater.inflate(R.layout.dialog_layout, null);
+        TextView txtTitle = (TextView) dialogLayout.findViewById(R.id.txtTitle);
+        TextView txtBody = (TextView) dialogLayout.findViewById(R.id.txtBody);
+        Button btnYes = (Button) dialogLayout.findViewById(R.id.btnYes);
+        Button btnNo = (Button) dialogLayout.findViewById(R.id.btnNo);
+        btnNo.setVisibility(View.GONE);
+        btnYes.setText("OK");
+        txtBody.setText(message);
+        txtTitle.setText("Information");
 
-            neutral_button.setTextColor(context.getResources()
-                    .getColor(android.R.color.white));
-        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setView(dialogLayout);
+        final AlertDialog dialog = builder.create();
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Activity) context).finish();
+                Intent i = new Intent(((Activity) context), SplashActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                ((Activity) context).startActivity(i);
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 
     public static void createDialogForceUpdate(final Context context,String title, String message, final TapView listener) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View dialogLayout = inflater.inflate(R.layout.dialog_layout, null);
+        TextView txtTitle = (TextView) dialogLayout.findViewById(R.id.txtTitle);
+        TextView txtBody = (TextView) dialogLayout.findViewById(R.id.txtBody);
+        Button btnYes = (Button) dialogLayout.findViewById(R.id.btnYes);
+        Button btnNo = (Button) dialogLayout.findViewById(R.id.btnNo);
+        btnNo.setVisibility(View.GONE);
+        btnYes.setText("Update");
+        txtBody.setText(message);
+        txtTitle.setText(title);
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
+        builder.setView(dialogLayout);
+        final AlertDialog dialog = builder.create();
+        btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View view) {
                 listener.setAction(1, 1, "force update");
                 dialog.dismiss();
             }
         });
-
-        AlertDialog dialog = builder.create();
         dialog.show();
-
-        Button neutral_button = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-        if (neutral_button != null) {
-            neutral_button.setBackgroundDrawable(context.getResources()
-                    .getDrawable(R.drawable.rounded_button));
-
-            neutral_button.setTextColor(context.getResources()
-                    .getColor(android.R.color.white));
-        }
     }
 
     public static void onCreate(Context context) {
