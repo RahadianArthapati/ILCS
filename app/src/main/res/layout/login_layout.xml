@@ -41,7 +41,6 @@
                 app:met_baseColor="#000000"
                 app:met_floatingLabel="highlight"
                 app:met_primaryColor="#000000"
-                app:met_singleLineEllipsis="true"
                 app:met_textColorHint="#000000"/>
 
             <com.ikt.main.to.component.MaterialEditText
@@ -61,8 +60,7 @@
                 app:met_baseColor="#000000"
                 app:met_primaryColor="#000000"
                 app:met_textColorHint="#000000"
-                app:met_floatingLabel="highlight"
-                app:met_singleLineEllipsis="true"/>
+                app:met_floatingLabel="highlight"/>
 
                 <Button
                     android:id="@+id/btnLogin"
